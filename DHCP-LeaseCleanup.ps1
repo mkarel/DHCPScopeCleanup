@@ -6,7 +6,7 @@ foreach ($IP in $ips){
     $HostName =  $IP.hostname 
     
       If(Test-Connection $IPAddress -Count 2 -Quiet){
-          write-host "Succesful ping $HostName ($IPAddress)"
+          write-host "Successful ping $HostName ($IPAddress)"
         }else{
             write-host "Removing $HostName ($IPAddress) from DHCP Lease table"
            Remove-DhcpServerv4Lease -IPAddress $IPAddress -ComputerName $DHCPServer
